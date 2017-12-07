@@ -20,5 +20,7 @@ public class TabelProgramari {
 	public TabelProgramari(int saptamana) {
 		this.saptamana = saptamana;
 	}
+	
+	
 
 }
