@@ -53,7 +53,10 @@ public class TabelProgramari {
 			celulaCurenta.setUtilizator2(utilizator);
 			utilizator.adaugaToken(saptamana, idCelula);
 		}
-
+	}
+	
+	public void stergeProgramare() {
+		
 	}
 
 }
