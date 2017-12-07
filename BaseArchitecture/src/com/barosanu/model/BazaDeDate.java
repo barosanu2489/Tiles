@@ -9,18 +9,6 @@ import com.barosanu.model.tabel.TabelProgramari;
 public class BazaDeDate {
 
 	
-	/**
-	 * va fi chemata din persistenta
-	 * pentru test voi hardcoda;
-	 */
-	private void initializare() {
-		listaUtilizatori = new ArrayList<Utilizator>();
-		tabelSaptCurenta = new TabelProgramari(ConstanteApplicatie.SAPTAMANA_CURENTA);
-		tabelSaptViitoare = new TabelProgramari(ConstanteApplicatie.SAPTAMANA_VIITOARE);
-		tabelSapt2 = new TabelProgramari(ConstanteApplicatie.PESTE_2_SAPTAMANI);
-		tabelSapt3 = new TabelProgramari(ConstanteApplicatie.PESTE_3_SAPTAMANI);
-	}
-	
 	private List<Utilizator> listaUtilizatori;
 	private TabelProgramari tabelSaptCurenta;
 	private TabelProgramari tabelSaptViitoare;
@@ -30,7 +18,11 @@ public class BazaDeDate {
 	
 	
 	public BazaDeDate() {
-		initializare();
+		listaUtilizatori = new ArrayList<Utilizator>();
+		tabelSaptCurenta = new TabelProgramari(ConstanteApplicatie.SAPTAMANA_CURENTA);
+		tabelSaptViitoare = new TabelProgramari(ConstanteApplicatie.SAPTAMANA_VIITOARE);
+		tabelSapt2 = new TabelProgramari(ConstanteApplicatie.PESTE_2_SAPTAMANI);
+		tabelSapt3 = new TabelProgramari(ConstanteApplicatie.PESTE_3_SAPTAMANI);
 	}
 	
 	public void adaugaUtilizator(Utilizator user) {

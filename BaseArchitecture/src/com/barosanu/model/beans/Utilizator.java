@@ -33,4 +33,31 @@ public class Utilizator {
 	public void actualizeazaObservatieProprie() {
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void adaugaToken(int idSaptamana, int token) {
+		switch (idSaptamana) {
+		case ConstanteApplicatie.SAPTAMANA_CURENTA:
+			programariSapt0.add(token);
+			break;
+		case ConstanteApplicatie.SAPTAMANA_VIITOARE:
+			programariSapt1.add(token);
+			break;
+		case ConstanteApplicatie.PESTE_2_SAPTAMANI:
+			programariSapt2.add(token);
+			break;
+		case ConstanteApplicatie.PESTE_3_SAPTAMANI:
+			programariSapt3.add(token);
+			break;
+		default:
+			break;
+		}
+	}
+
 }
