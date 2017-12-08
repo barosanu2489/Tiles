@@ -38,25 +38,30 @@ public class TabelProgramari {
 		this.saptamana = saptamana;
 	}
 
-	public void adaugaProgramare(int idCelula, Utilizator utilizator) {
+	public void adaugaProgramare(int idCelula, Utilizator utilizator, int locUtilizator) {
 		if (idCelula > NUMAR_MAXIM_PROGRAMARI || idCelula < 0) {
 			return;
 		}
-		CelulaTabel celulaCurenta = celule[idCelula];
-		if (celulaCurenta == null) {
-			celulaCurenta = new CelulaTabel(idCelula);
+		if (locUtilizator != CelulaTabel.UTILIZATOR1 || locUtilizator != CelulaTabel.UTILIZATOR2) {
+			return;
 		}
-		if (celulaCurenta.getUtilizator1() == null) {
-			celulaCurenta.setUtilizator1(utilizator);
-			utilizator.adaugaToken(saptamana, idCelula);
-		} else if (celulaCurenta.getUtilizator2() == null) {
-			celulaCurenta.setUtilizator2(utilizator);
-			utilizator.adaugaToken(saptamana, idCelula);
+		if (celule[idCelula] == null) {
+			celule[idCelula] = new CelulaTabel(idCelula);
 		}
+		celule[idCelula].setUtilizator(utilizator, locUtilizator);
+		utilizator.adaugaProgramare(saptamana, idCelula);
 	}
-	
-	public void stergeProgramare() {
-		
+
+	public void stergeProgramare(int idCelula, int locUtilizator) {
+		if (celule[idCelula] == null) {
+			return;
+		}
+		if (locUtilizator != CelulaTabel.UTILIZATOR1 || locUtilizator != CelulaTabel.UTILIZATOR2) {
+			return;
+		}
+		celule[idCelula].getUtilizator(locUtilizator).anuleazaProgramare(saptamana, idCelula);
+		celule[idCelula].stergeUtilizator(locUtilizator);
+
 	}
 
 }

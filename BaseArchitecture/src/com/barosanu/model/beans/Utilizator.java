@@ -8,29 +8,66 @@ public class Utilizator {
 
 	private String name;
 	private String password;
+	private String observatii;
+	private int ID;
 
+	public Utilizator(String name, int Id) {
+		this.name = name;
+		this.ID = Id;
+	}
+
+	// PROGRAMARI:
 	private List<Integer> programariSapt0;// saptamana curenta
 	private List<Integer> programariSapt1;// saptamana viitoare
 	private List<Integer> programariSapt2;// peste doua saptamani
 	private List<Integer> programariSapt3;// peste 3 saptamanani
 
+	// DISPONIBILITATE:
+	private List<Integer> disponibiltateSapt0;// saptamana curenta
+	private List<Integer> disponibiltateSapt1;// saptamana viitoare
+	private List<Integer> disponibiltateSapt2;// peste doua saptamani
+	private List<Integer> disponibiltateSapt3;// peste 3 saptamanani
+
 	public int getAccesLevel() {
 		return ConstanteApplicatie.ACCES_UTILIZATOR;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ID;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Utilizator other = (Utilizator) obj;
+		if (ID != other.ID)
+			return false;
+		return true;
+	}
+
+	public boolean equals(Utilizator altUtilizator) {
+		if (altUtilizator == null) {
+			return false;
+		} else if (altUtilizator.ID == this.ID) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void vizualizeazaProgramareaProprie() {
 	}
 
-	public void anuleazaProgramareProprie() {
-	}
-
 	public void vizualizeazaProgramari() {
-	}
-
-	public void actualizeazaDisponibilitate() {
-	}
-
-	public void actualizeazaObservatieProprie() {
 	}
 
 	public String getName() {
@@ -40,8 +77,8 @@ public class Utilizator {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public void adaugaToken(int idSaptamana, int token) {
+
+	public void adaugaProgramare(int idSaptamana, int token) {
 		switch (idSaptamana) {
 		case ConstanteApplicatie.SAPTAMANA_CURENTA:
 			programariSapt0.add(token);
@@ -58,6 +95,75 @@ public class Utilizator {
 		default:
 			break;
 		}
+	}
+
+	public void adaugaDisponibilitate(int idSaptamana, int token) {
+		switch (idSaptamana) {
+		case ConstanteApplicatie.SAPTAMANA_CURENTA:
+			disponibiltateSapt0.add(token);
+			break;
+		case ConstanteApplicatie.SAPTAMANA_VIITOARE:
+			disponibiltateSapt1.add(token);
+			break;
+		case ConstanteApplicatie.PESTE_2_SAPTAMANI:
+			disponibiltateSapt2.add(token);
+			break;
+		case ConstanteApplicatie.PESTE_3_SAPTAMANI:
+			disponibiltateSapt3.add(token);
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void stergeDisponibilitate(int idSaptamana, int token) {
+		switch (idSaptamana) {
+		case ConstanteApplicatie.SAPTAMANA_CURENTA:
+			disponibiltateSapt0.remove(token);
+			break;
+		case ConstanteApplicatie.SAPTAMANA_VIITOARE:
+			disponibiltateSapt1.remove(token);
+			break;
+		case ConstanteApplicatie.PESTE_2_SAPTAMANI:
+			disponibiltateSapt2.remove(token);
+			break;
+		case ConstanteApplicatie.PESTE_3_SAPTAMANI:
+			disponibiltateSapt3.remove(token);
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void anuleazaProgramare(int idSaptamana, int token) {
+		switch (idSaptamana) {
+		case ConstanteApplicatie.SAPTAMANA_CURENTA:
+			programariSapt0.remove(token);
+			break;
+		case ConstanteApplicatie.SAPTAMANA_VIITOARE:
+			programariSapt1.remove(token);
+			break;
+		case ConstanteApplicatie.PESTE_2_SAPTAMANI:
+			programariSapt2.remove(token);
+			break;
+		case ConstanteApplicatie.PESTE_3_SAPTAMANI:
+			programariSapt3.remove(token);
+			break;
+		default:
+			break;
+		}
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public String getObservatii() {
+		return observatii;
+	}
+
+	public void setObservatii(String observatii) {
+		this.observatii = observatii;
 	}
 
 }
