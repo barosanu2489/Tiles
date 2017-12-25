@@ -14,12 +14,16 @@
 </h:head>
 <h:body>
 
-	<h1 class="title">Pagina Principala!!!</h1>
+
 	<br />
 
 	<div align="center">
+		<h1 class="title">Pagina Principala!!!</h1>
 		<h:outputText value="Sunteti logat ca: "/><br/>
 		<h:outputText value="#{UserSession.numeUtilizator}"/>
+		<br/>
+		
+		<h:button value="Disponibilitate generala: " outcome = "disponibilitate-generala?faces-redirect=true&amp;id=#{UserSession.id}" />
 	</div>
 
 </h:body>

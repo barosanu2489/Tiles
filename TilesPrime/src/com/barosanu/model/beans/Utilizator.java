@@ -10,6 +10,7 @@ public class Utilizator {
 	private String observatii;
 	private String password;
 	private int ID;
+	private UserSessionTokens tokeniGenerali;
 
 	public Utilizator(String name, String pass,int Id) {
 		this.name = name;
@@ -173,6 +174,14 @@ public class Utilizator {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public UserSessionTokens getTokeniGenerali() {
+		return tokeniGenerali;
+	}
+
+	public void setTokeniGenerali(UserSessionTokens tokeniGenerali) {
+		this.tokeniGenerali = tokeniGenerali;
 	}
 
 }

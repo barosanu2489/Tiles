@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:metadata>
+	<f:viewParam name="id" value="#{UserSession.id}" />
+	<f:viewAction action="#{UserSession.check}" />
+</f:metadata>
+<h:head>
+	<link href="./css/styles.css" rel="stylesheet" type="text/css" />
+	<title>Disponibilitate generala</title>
+</h:head>
+<h:body>
+
+	<div align="center">
+		<h2>Disponibilitate generala:</h2>
+		<h:outputText value="Sunteti logat ca: "/><br/>
+		<h:outputText value="#{UserSession.numeUtilizator}"/>
+		
+		<h3>Tabel gara:</h3>
+		<p:panelGrid style="margin-top:20px">
+			<p:row>
+				<p:column>ORA</p:column>
+				<p:column>Luni</p:column>
+				<p:column>Marti</p:column>
+				<p:column>Miercuri</p:column>
+				<p:column>Joi</p:column>
+				<p:column>Vineri</p:column>
+				<p:column>Sambata</p:column>
+				<p:column>Duminica</p:column>
+			</p:row>
+			<p:row>
+				<p:column>6:30 <br/> 8:30</p:column>
+				<p:column> <p:selectBooleanButton value="#{UserSession.utilizator.tokeniGenerali.token1}" id="token1" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton value="#{UserSession.utilizator.tokeniGenerali.token2}" id="token2" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton value="#{UserSession.utilizator.tokeniGenerali.token3}" id="token3" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token4" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token5" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token6" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token7" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column>8:30 <br/> 10:00</p:column>
+				<p:column> <p:selectBooleanButton id="token8" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token9" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token10" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token11" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token12" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token13" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token14" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column>10:00 <br/> 11:30</p:column>
+				<p:column> <p:selectBooleanButton id="token15" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token16" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token17" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token18" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token19" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token20" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token21" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column>11:30 <br/> 13:00</p:column>
+				<p:column> <p:selectBooleanButton id="token22" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token23" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token24" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token25" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token26" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token27" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token28" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column>13:00 <br/> 14:30</p:column>
+				<p:column> <p:selectBooleanButton id="token29" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token30" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token31" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token32" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token33" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token34" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token35" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column>14:30 <br/> 16:00</p:column>
+				<p:column> <p:selectBooleanButton id="token36" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token37" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token38" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token39" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token40" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token41" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token42" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column>16:00 <br/> 17:30</p:column>
+				<p:column> <p:selectBooleanButton id="token43" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token44" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token45" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token46" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token47" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token48" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token49" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column>17:30 <br/> 19:00</p:column>
+				<p:column> <p:selectBooleanButton id="token50" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token51" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token52" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token53" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token54" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token55" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token56" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column>19:00 <br/> 20:30</p:column>
+				<p:column> <p:selectBooleanButton id="token57" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token58" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token59" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token60" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token61" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token62" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token63" onLabel="Da" offLabel="Nu" /></p:column>
+			</p:row>
+		
+		</p:panelGrid>
+		<p:commandButton id="submint" value = "Submit" />
+
+	</div>
+
+</h:body>
+</html>

@@ -18,6 +18,14 @@ public class UserSession {
 
 	private int id;
 
+	public Utilizator getUtilizator() {
+		return utilizator;
+	}
+
+	public void setUtilizator(Utilizator utilizator) {
+		this.utilizator = utilizator;
+	}
+
 	public BootStrap getBootStrap() {
 		return bootStrap;
 	}

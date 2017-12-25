@@ -1,34 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<link href="./css/styles.css" rel="stylesheet" type="text/css" />
 	<title>Pagina login</title>
 </h:head>
 <h:body>
 
-	<h1 class="title">Introduceti numele de utilizator si parola:</h1>
-	<br />
-
 	<div align="center">
+		<h1 class="title">Introduceti numele de utilizator si parola:</h1>
 		<h:form id="loginForm">
-			<h:outputText value="Nume utilizator:" />
-			<h:inputText value="#{loginBean.username}" required="true"
-				requiredMessage="lipsa utilizator!" />
-			<br />
-			<br />
-			<h:outputText value="Parola:" />
-			<h:inputSecret value="#{loginBean.password}" required="true"
-				requiredMessage="lipsa parola!" />
-			<h:commandButton value="login" action="#{loginBean.login}"/>
-
-
-
+			<h:panelGrid colums="2" cellpadding="5">
+				<h:outputLabel value="Nume utilizator: " />
+				<p:inputText value="#{loginBean.username}" required="true"
+					requiredMessage="lipsa utilizator!" />
+				<h:outputLabel value="Parola: " />
+				<p:password value="#{loginBean.password}" required="true"
+					requiredMessage="lipsa parola!" />
+				<p:commandButton value="login" action="#{loginBean.login}" />
+			</h:panelGrid>
 		</h:form>
 	</div>
-
-
 
 </h:body>
 </html>
