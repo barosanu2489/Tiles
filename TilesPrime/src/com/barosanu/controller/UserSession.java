@@ -11,6 +11,7 @@ import com.barosanu.model.beans.Utilizator;
 public class UserSession {
 
 	private Utilizator utilizator;
+	@SuppressWarnings("unused")
 	private String numeUtilizator;
 
 	@ManagedProperty(value = "#{BootStrap}")
@@ -61,8 +62,21 @@ public class UserSession {
 			}
 			context.responseComplete();
 		} else {
-			System.out.println(utilizator);
+			//System.out.println(utilizator);
 		}
 	}
 
+	public boolean getDisponibilitateGenerala(int token) {
+		return utilizator.getDisponibiltateGenerala().contains((Integer) token);
+	}
+
+	public void toogleDisponibilitateGenerala(int token, Object zz) {
+		System.out.println("toogleDisponibilitateGenerala " + token + " " + zz);
+		utilizator.getDisponibiltateGenerala().add((Integer) token);
+	}
+	
+	
+	public void zzzz() {
+		System.out.println("zzzz");
+	}
 }

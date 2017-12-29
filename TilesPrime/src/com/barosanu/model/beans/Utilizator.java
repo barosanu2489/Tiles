@@ -1,5 +1,6 @@
 package com.barosanu.model.beans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.barosanu.model.ConstanteApplicatie;
@@ -10,12 +11,12 @@ public class Utilizator {
 	private String observatii;
 	private String password;
 	private int ID;
-	private UserSessionTokens tokeniGenerali;
 
 	public Utilizator(String name, String pass,int Id) {
 		this.name = name;
 		this.setPassword(pass);
 		this.ID = Id;
+		disponibiltateGenerala = new ArrayList<Integer>();
 	}
 
 	// PROGRAMARI:
@@ -25,6 +26,7 @@ public class Utilizator {
 	private List<Integer> programariSapt3;// peste 3 saptamanani
 
 	// DISPONIBILITATE:
+	private List<Integer> disponibiltateGenerala;// saptamana curenta
 	private List<Integer> disponibiltateSapt0;// saptamana curenta
 	private List<Integer> disponibiltateSapt1;// saptamana viitoare
 	private List<Integer> disponibiltateSapt2;// peste doua saptamani
@@ -176,12 +178,12 @@ public class Utilizator {
 		this.password = password;
 	}
 
-	public UserSessionTokens getTokeniGenerali() {
-		return tokeniGenerali;
+	public List<Integer> getDisponibiltateGenerala() {
+		return disponibiltateGenerala;
 	}
 
-	public void setTokeniGenerali(UserSessionTokens tokeniGenerali) {
-		this.tokeniGenerali = tokeniGenerali;
+	public void setDisponibiltateGenerala(List<Integer> disponibiltateGenerala) {
+		this.disponibiltateGenerala = disponibiltateGenerala;
 	}
 
 }

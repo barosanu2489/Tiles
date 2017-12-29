@@ -21,7 +21,8 @@
 		<h:outputText value="#{UserSession.numeUtilizator}"/>
 		
 		<h3>Tabel gara:</h3>
-		<p:panelGrid style="margin-top:20px">
+		<h:form>
+		<p:panelGrid style="margin-top:20px" id = "display">
 			<p:row>
 				<p:column>ORA</p:column>
 				<p:column>Luni</p:column>
@@ -34,13 +35,13 @@
 			</p:row>
 			<p:row>
 				<p:column>6:30 <br/> 8:30</p:column>
-				<p:column> <p:selectBooleanButton value="#{UserSession.utilizator.tokeniGenerali.token1}" id="token1" onLabel="Da" offLabel="Nu" /></p:column>
-				<p:column> <p:selectBooleanButton value="#{UserSession.utilizator.tokeniGenerali.token2}" id="token2" onLabel="Da" offLabel="Nu" /></p:column>
-				<p:column> <p:selectBooleanButton value="#{UserSession.utilizator.tokeniGenerali.token3}" id="token3" onLabel="Da" offLabel="Nu" /></p:column>
-				<p:column> <p:selectBooleanButton id="token4" onLabel="Da" offLabel="Nu" /></p:column>
-				<p:column> <p:selectBooleanButton id="token5" onLabel="Da" offLabel="Nu" /></p:column>
-				<p:column> <p:selectBooleanButton id="token6" onLabel="Da" offLabel="Nu" /></p:column>
-				<p:column> <p:selectBooleanButton id="token7" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token1" value="#{UserSession.getDisponibilitateGenerala(1)}" onLabel="Da" offLabel="Nu"><p:ajax  listener="#{UserSession.zzzz}"  />   </p:selectBooleanButton>    </p:column>
+				<p:column> <p:selectBooleanButton id="token2" value="#{UserSession.getDisponibilitateGenerala(2)}" onLabel="Da" offLabel="Nu" actionListener="#{UserSession.toogleDisponibilitateGenerala(2, aaa)}" onchange="#{UserSession.toogleDisponibilitateGenerala(2, aaa)}"/></p:column>
+				<p:column> <p:selectBooleanButton id="value3" value="#{UserSession.getDisponibilitateGenerala(3)}" onLabel="Da" offLabel="Nu" onchange="#{UserSession.toogleDisponibilitateGenerala(3, aaa)}"/></p:column>
+				<p:column> <p:selectBooleanButton id="value4" value="#{UserSession.getDisponibilitateGenerala(4)}" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token5" value="#{UserSession.getDisponibilitateGenerala(5)}" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token6" value="#{UserSession.getDisponibilitateGenerala(6)}" onLabel="Da" offLabel="Nu" /></p:column>
+				<p:column> <p:selectBooleanButton id="token7" value="#{UserSession.getDisponibilitateGenerala(7)}" onLabel="Da" offLabel="Nu" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column>8:30 <br/> 10:00</p:column>
@@ -122,9 +123,9 @@
 				<p:column> <p:selectBooleanButton id="token62" onLabel="Da" offLabel="Nu" /></p:column>
 				<p:column> <p:selectBooleanButton id="token63" onLabel="Da" offLabel="Nu" /></p:column>
 			</p:row>
-		
 		</p:panelGrid>
-		<p:commandButton id="submint" value = "Submit" />
+		<p:commandButton id="submint" value = "Submit" update="display"/>
+		</h:form>
 
 	</div>
 
